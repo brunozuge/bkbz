@@ -3,97 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Bianca ❤️</title>
+<title>Bom dia, amor ❤️</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
+font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body{
-height:100vh;
+min-height:100vh;
 display:flex;
-justify-content:center;
 align-items:center;
-background: linear-gradient(135deg,#ff4e7a,#ff8fa3);
-overflow:hidden;
-color:white;
-text-align:center;
+justify-content:center;
+background: linear-gradient(135deg,#ff8fa3,#ffb3c6,#ffc2d1);
+background-size:400% 400%;
+animation:fundo 12s infinite alternate;
+padding:20px;
+}
+
+@keyframes fundo{
+0%{background-position:left;}
+100%{background-position:right;}
 }
 
 .container{
-background: rgba(255,255,255,0.1);
+background: rgba(255,255,255,0.15);
 backdrop-filter: blur(10px);
 padding:40px;
 border-radius:20px;
-max-width:600px;
-box-shadow:0 0 40px rgba(0,0,0,0.2);
+max-width:650px;
+width:100%;
+color:white;
+text-align:center;
+box-shadow:0 10px 35px rgba(0,0,0,0.25);
 animation: aparecer 1.5s ease;
 }
 
 h1{
-font-size:2.5em;
-margin-bottom:10px;
+font-size:2.5rem;
+margin-bottom:20px;
 }
 
 p{
-font-size:1.2em;
-line-height:1.6em;
+font-size:1.2rem;
+line-height:1.8;
+margin-bottom:15px;
+}
+
+.extra{
 opacity:0;
 transition:1s;
-}
-
-button{
-margin-top:25px;
-padding:12px 25px;
-border:none;
-border-radius:30px;
-background:white;
-color:#ff4e7a;
-font-size:16px;
-cursor:pointer;
-font-weight:bold;
-transition:0.3s;
-}
-
-button:hover{
-transform:scale(1.1);
+margin-top:15px;
 }
 
 .mostrar{
 opacity:1;
 }
 
-@keyframes aparecer{
-from{transform:scale(0.8); opacity:0;}
-to{transform:scale(1); opacity:1;}
+button{
+margin-top:20px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+font-weight:bold;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
 }
 
-/* Corações */
+button:hover{
+transform:scale(1.08);
+}
+
+@keyframes aparecer{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* corações */
 
 .heart{
 position:absolute;
+font-size:18px;
 color:white;
-font-size:20px;
-animation: subir linear infinite;
+animation:subir linear infinite;
 opacity:0.7;
 }
 
 @keyframes subir{
 0%{
-transform:translateY(100vh) scale(0.5);
+transform:translateY(100vh) scale(0.6);
 opacity:0;
 }
-50%{
-opacity:1;
-}
+50%{opacity:1;}
 100%{
 transform:translateY(-10vh) scale(1.2);
 opacity:0;
 }
+}
+
+/* RESPONSIVO */
+
+@media (max-width:600px){
+
+h1{
+font-size:2rem;
+}
+
+p{
+font-size:1.05rem;
+}
+
+.container{
+padding:30px 20px;
+}
+
 }
 
 </style>
@@ -103,53 +139,61 @@ opacity:0;
 
 <div class="container">
 
-<h1>Bianca Kist ❤️</h1>
+<h1>Bom dia, amor ☀️❤️</h1>
 
-<p id="mensagem">
-Bianca,  
-
-Eu precisava fazer algo especial para te dizer o quanto você é importante para mim.  
-Eu sei que errei e sinto muito pelo que fiz.  
-
-Nada do que aconteceu muda o quanto **eu te amo** e o quanto você significa na minha vida.  
-Tu é uma pessoa incrível, única e que trouxe muita felicidade para mim.  
-
-Se eu pudesse voltar no tempo, faria tudo diferente.  
-Mas o que posso fazer agora é ser sincero e te pedir desculpas de coração.  
-
-Com todo meu amor. ❤️
+<p>
+Bom dia, amor.  
+Espero que você acorde bem hoje e que seu dia comece tranquilo.
 </p>
 
-<button onclick="mostrarMensagem()">Clique aqui</button>
+<p>
+Só queria te lembrar logo cedo que você é muito especial para mim.  
+Mesmo quando as coisas ficam difíceis, você continua sendo alguém muito importante no meu coração.
+</p>
+
+<p>
+Espero que seu dia seja leve, cheio de coisas boas, e que você tenha muitos motivos para sorrir.
+</p>
+
+<button onclick="mostrar()">Mais uma coisa...</button>
+
+<p class="extra" id="extra">
+Eu sei que às vezes erro, mas uma coisa nunca muda:  
+o carinho enorme que eu tenho por você.  
+
+Tenha um dia lindo, amor. ❤️
+</p>
 
 </div>
 
 <script>
 
-function mostrarMensagem(){
-document.getElementById("mensagem").classList.add("mostrar");
+function mostrar(){
+document.getElementById("extra").classList.add("mostrar");
 }
 
-/* Criar corações animados */
+/* corações */
 
 function criarCoracao(){
-const heart = document.createElement("div");
+
+const heart=document.createElement("div");
 
 heart.classList.add("heart");
-heart.innerHTML = "❤";
+heart.innerHTML="❤";
 
-heart.style.left = Math.random()*100 + "vw";
-heart.style.animationDuration = (3 + Math.random()*5) + "s";
-heart.style.fontSize = (15 + Math.random()*25) + "px";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
 
 document.body.appendChild(heart);
 
 setTimeout(()=>{
 heart.remove();
-},8000);
+},7000);
+
 }
 
-setInterval(criarCoracao,500);
+setInterval(criarCoracao,700);
 
 </script>
 
