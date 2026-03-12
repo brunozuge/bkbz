@@ -3,324 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pet Amigo | Cuidado simples, feito com carinho</title>
+<title>Para Bianca ❤️</title>
 
 <style>
-:root{
-    --brand:#1b8a5a;
-    --brand-dark:#0f5f3e;
-    --accent:#facc15;
-    --dark:#1f2933;
-    --bg:#eef4f1;
-    --card:#f9fbfa;
-}
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-    background:var(--bg);
-    color:var(--dark);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg,#ff4e7a,#ff8fa3);
+overflow:hidden;
+color:white;
+text-align:center;
 }
 
-/* HEADER */
-header{
-    background:var(--card);
-    padding:18px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+.container{
+background: rgba(255,255,255,0.1);
+backdrop-filter: blur(10px);
+padding:40px;
+border-radius:20px;
+max-width:600px;
+box-shadow:0 0 40px rgba(0,0,0,0.2);
+animation: aparecer 1.5s ease;
 }
 
-header h1{
-    color:var(--brand);
-    font-size:26px;
+h1{
+font-size:2.5em;
+margin-bottom:10px;
 }
 
-nav a{
-    margin-left:20px;
-    text-decoration:none;
-    color:#2d2d2d;
-    font-weight:600;
+p{
+font-size:1.2em;
+line-height:1.6em;
+opacity:0;
+transition:1s;
 }
 
-/* HERO */
-.hero{
-    background:linear-gradient(120deg,var(--brand),var(--brand-dark));
-    color:white;
-    padding:75px 8%;
-    display:grid;
-    grid-template-columns:1.1fr 1fr;
-    gap:40px;
+button{
+margin-top:25px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4e7a;
+font-size:16px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
 }
 
-.hero h2{
-    font-size:38px;
-    margin-bottom:15px;
+button:hover{
+transform:scale(1.1);
 }
 
-.hero p{
-    font-size:17px;
-    margin-bottom:25px;
-    opacity:.95;
+.mostrar{
+opacity:1;
 }
 
-.hero .highlight{
-    background:var(--accent);
-    color:#000;
-    padding:8px 14px;
-    border-radius:20px;
-    font-weight:bold;
-    display:inline-block;
-    margin-bottom:20px;
+@keyframes aparecer{
+from{transform:scale(0.8); opacity:0;}
+to{transform:scale(1); opacity:1;}
 }
 
-.hero img{
-    width:100%;
-    border-radius:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
+/* Corações */
+
+.heart{
+position:absolute;
+color:white;
+font-size:20px;
+animation: subir linear infinite;
+opacity:0.7;
 }
 
-/* SECTIONS */
-section{
-    padding:70px 8%;
+@keyframes subir{
+0%{
+transform:translateY(100vh) scale(0.5);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-10vh) scale(1.2);
+opacity:0;
+}
 }
 
-section h3{
-    text-align:center;
-    font-size:30px;
-    margin-bottom:45px;
-    color:#183c2b;
-}
-
-/* SERVICES */
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.service{
-    background:var(--card);
-    padding:32px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
-}
-
-.service h4{
-    margin-bottom:12px;
-    color:var(--brand-dark);
-}
-
-.price{
-    margin-top:15px;
-    font-weight:bold;
-    color:var(--brand);
-}
-
-/* DIFFERENTIAL */
-#diferenciais{
-    background:#ddebe5;
-}
-
-.differentials{
-    border-radius:24px;
-    padding:55px;
-    max-width:950px;
-    margin:auto;
-    background:var(--card);
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-}
-
-.differentials p{
-    text-align:center;
-    font-size:18px;
-    margin-bottom:35px;
-}
-
-.differentials ul{
-    list-style:none;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.differentials li{
-    font-size:17px;
-    background:#e6f1ec;
-    padding:18px;
-    border-radius:14px;
-}
-
-/* CONTACT */
-#contato{
-    background:#e6f1ec;
-}
-
-.contact{
-    border-radius:24px;
-    padding:55px;
-    max-width:950px;
-    margin:auto;
-    background:var(--card);
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-}
-
-.contact h4{
-    margin-bottom:15px;
-    color:var(--brand-dark);
-}
-
-.contact p{
-    font-size:17px;
-    margin-bottom:10px;
-}
-
-.contact .box{
-    background:#f0f7f4;
-    padding:25px;
-    border-radius:16px;
-}
-
-/* FOOTER */
-footer{
-    background:var(--brand-dark);
-    color:white;
-    text-align:center;
-    padding:35px 8%;
-    margin-top:60px;
-}
-
-/* WHATSAPP */
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    background:#22c55e;
-    color:white;
-    padding:14px 20px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* RESPONSIVO */
-@media(max-width:900px){
-    .hero{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .differentials ul{
-        grid-template-columns:1fr;
-    }
-
-    .contact{
-        grid-template-columns:1fr;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Pet Amigo</h1>
-    <nav>
-        <a href="#servicos">Serviços</a>
-        <a href="#diferenciais">Por que nós?</a>
-        <a href="#contato">Contato</a>
-    </nav>
-</header>
+<div class="container">
 
-<section class="hero">
-    <div>
-        <span class="highlight">Cuidado responsável e preços justos</span>
-        <h2>O cuidado que seu pet precisa no dia a dia</h2>
-        <p>
-            Trabalhamos com atenção, higiene e respeito em cada atendimento,
-            sempre priorizando a saúde e o bem-estar do seu animal.
-        </p>
-    </div>
+<h1>Bianca Kist ❤️</h1>
 
-    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e" alt="Cachorro sendo cuidado">
-</section>
+<p id="mensagem">
+Bianca,  
 
-<section id="servicos">
-    <h3>Nossos Serviços</h3>
-    <div class="services">
-        <div class="service">
-            <h4>Banho</h4>
-            <p>Limpeza completa com produtos adequados para cada tipo de pet.</p>
-            <div class="price">A partir de R$ 40</div>
-        </div>
+Eu precisava fazer algo especial para te dizer o quanto você é importante para mim.  
+Eu sei que errei e sinto muito pelo que fiz.  
 
-        <div class="service">
-            <h4>Tosa</h4>
-            <p>Tosa higiênica ou padrão, feita com calma e cuidado.</p>
-            <div class="price">A partir de R$ 60</div>
-        </div>
+Nada do que aconteceu muda o quanto **eu te amo** e o quanto você significa na minha vida.  
+Tu é uma pessoa incrível, única e que trouxe muita felicidade para mim.  
 
-        <div class="service">
-            <h4>Loja Pet</h4>
-            <p>Rações, acessórios e itens essenciais para o dia a dia.</p>
-            <div class="price">Preços acessíveis</div>
-        </div>
-    </div>
-</section>
+Se eu pudesse voltar no tempo, faria tudo diferente.  
+Mas o que posso fazer agora é ser sincero e te pedir desculpas de coração.  
 
-<section id="diferenciais">
-    <h3>Por que escolher o Pet Amigo?</h3>
-    <div class="differentials">
-        <p>
-            Nosso trabalho é baseado em responsabilidade, cuidado e confiança.
-            Cada atendimento é feito com atenção real ao animal e ao tutor.
-        </p>
+Com todo meu amor. ❤️
+</p>
 
-        <ul>
-            <li>✔ Atendimento cuidadoso e respeitoso</li>
-            <li>✔ Profissionais experientes</li>
-            <li>✔ Ambiente limpo e seguro</li>
-            <li>✔ Transparência nos serviços</li>
-            <li>✔ Compromisso com o bem-estar</li>
-            <li>✔ Relação de confiança com os clientes</li>
-        </ul>
-    </div>
-</section>
+<button onclick="mostrarMensagem()">Clique aqui</button>
 
-<section id="contato">
-    <h3>Contato</h3>
-    <div class="contact">
-        <div class="box">
-            <h4>📍 Endereço</h4>
-            <p>Rua Exemplo, 123</p>
-            <p>Cidade / Estado</p>
-        </div>
+</div>
 
-        <div class="box">
-            <h4>📞 Atendimento</h4>
-            <p>Telefone: (51) 99952-2416</p>
-            <p>Seg a Sáb • 8h às 18h</p>
-            <p>Atendimento presencial e WhatsApp</p>
-        </div>
-    </div>
-</section>
+<script>
 
-<footer>
-    <p>© 2026 Pet Amigo • Cuidado, confiança e respeito</p>
-</footer>
+function mostrarMensagem(){
+document.getElementById("mensagem").classList.add("mostrar");
+}
 
-<a class="whatsapp" href="https://wa.me/5551999522416" target="_blank">
-    WhatsApp
-</a>
+/* Criar corações animados */
+
+function criarCoracao(){
+const heart = document.createElement("div");
+
+heart.classList.add("heart");
+heart.innerHTML = "❤";
+
+heart.style.left = Math.random()*100 + "vw";
+heart.style.animationDuration = (3 + Math.random()*5) + "s";
+heart.style.fontSize = (15 + Math.random()*25) + "px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+}
+
+setInterval(criarCoracao,500);
+
+</script>
 
 </body>
 </html>
